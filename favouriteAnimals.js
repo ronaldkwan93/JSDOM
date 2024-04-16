@@ -25,10 +25,32 @@ function createAnimalList() {
         let newList = document.createElement("li")
         newList.textContent = animal;
         newList.id = animal;
+
+        let removeItemButton = document.createElement("button");
+
+        removeItemButton.onclick= () => removeAnimalFromList(animal);
+
+        removeItemButton.textContent = "Remove animal";
+
+        newList.appendChild(removeItemButton)
         
         let rootOlNode = document.querySelector("ol");
         rootOlNode.appendChild(newList);
     });
+}
+
+function removeAnimalFromList(targetAnimalId) {
+    let targetListItem = document.getElementById(targetAnimalId);
+    targetListItem.remove();
+    let isAnimalInList = animals.includes(targetAnimalId);
+
+    animals = animals.filter(animal => {
+        if(targetAnimalId == animal){
+            return false;
+        } else {
+            return true;
+        }
+    })
 }
 
 createAnimalList()
