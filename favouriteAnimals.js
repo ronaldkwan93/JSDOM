@@ -53,4 +53,4 @@ function removeAnimalFromList(targetAnimalId) {
     })
 }
 
-createAnimalList()
+createAnimalList("dark")
