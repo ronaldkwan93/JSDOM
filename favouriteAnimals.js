@@ -66,8 +66,11 @@ function addAnimalToList(event, targetInputId){
     let foundInputFieldValue = targetInputField.value;
     console.log("Input field value to add to list is: " + foundInputFieldValue)
 
+    
     animals.push(foundInputFieldValue);
-
+    
+    targetInputField.value = "";
+    
     createAnimalList();
 }
 
