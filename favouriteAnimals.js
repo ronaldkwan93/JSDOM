@@ -19,6 +19,10 @@ let animals = [
 ];
 
 function createAnimalList() {
+
+    let rootOlNode = document.querySelector("ol");
+    rootOlNode.innerHTML = "";
+
     animals.forEach((animal) => {
         console.log("animal: " + animal);
 
@@ -34,7 +38,7 @@ function createAnimalList() {
 
         newList.appendChild(removeItemButton)
         
-        let rootOlNode = document.querySelector("ol");
+        
         rootOlNode.appendChild(newList);
     });
 }
@@ -55,6 +59,8 @@ function removeAnimalFromList(targetAnimalId) {
 
 
 function addAnimalToList(event, targetInputId){
+    event.preventDefault();
+
     let targetInputField = document.getElementById(targetInputId);
 
     let foundInputFieldValue = targetInputField.value;
@@ -67,5 +73,8 @@ function addAnimalToList(event, targetInputId){
 
 let fakeFormButton = document.getElementById("fakeform-submit")
 fakeFormButton.addEventListener("click", (event) => {addAnimalToList(event, "fakeform-addAnimal")})
+
+let realFormButton = document.getElementById("realform-submit")
+realFormButton.addEventListener("click", (event) => {addAnimalToList(event, "realform-addAnimal")})
 
 createAnimalList("dark")
