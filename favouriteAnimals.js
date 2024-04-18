@@ -53,4 +53,19 @@ function removeAnimalFromList(targetAnimalId) {
     })
 }
 
+
+function addAnimalToList(event, targetInputId){
+    let targetInputField = document.getElementById(targetInputId);
+
+    let foundInputFieldValue = targetInputField.value;
+    console.log("Input field value to add to list is: " + foundInputFieldValue)
+
+    animals.push(foundInputFieldValue);
+
+    createAnimalList();
+}
+
+let fakeFormButton = document.getElementById("fakeform-submit")
+fakeFormButton.addEventListener("click", (event) => {addAnimalToList(event, "fakeform-addAnimal")})
+
 createAnimalList("dark")
