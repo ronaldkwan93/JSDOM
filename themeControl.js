@@ -17,4 +17,25 @@ function changeCssTheme(themeName) {
     }
 }
 
+
+function setThemeToDark(){
+    changeCssTheme("dark");
+}
+
+function setThemeToLight(){
+    changeCssTheme("light");
+}
+
+function toggleCssTheme() {
+    let currentBackgroundColour = getComputedStyle(document.documentElement).getPropertyValue("--background");
+
+    console.log("current background color is: " + currentBackgroundColour)
+
+    if (currentBackgroundColour == "white") {
+        changeCssTheme("dark");
+    } else {
+        changeCssTheme("light");
+    }
+}
+
 changeCssTheme("dark");
