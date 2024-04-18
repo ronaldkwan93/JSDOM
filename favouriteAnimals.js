@@ -70,7 +70,7 @@ function addAnimalToList(event, targetInputId){
     animals.push(foundInputFieldValue);
     
     targetInputField.value = "";
-    
+
     createAnimalList();
 }
 
@@ -97,8 +97,8 @@ realFormInput.addEventListener("focusout", () => {inputHelperHide("realform-hint
 inputHelperHide("realform-hint");
 
 let fakeFormInput = document.getElementById("fakeform-addAnimal")
-realFormInput.addEventListener("focusin", () => {inputHelperReveal("fakeform-hint")})
-realFormInput.addEventListener("focusout", () => {inputHelperHide("fakeform-hint")})
+fakeFormInput.addEventListener("focusin", () => {inputHelperReveal("fakeform-hint")})
+fakeFormInput.addEventListener("focusout", () => {inputHelperHide("fakeform-hint")})
 inputHelperHide("fakeform-hint");
 
 createAnimalList("dark")
